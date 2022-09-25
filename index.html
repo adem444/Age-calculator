@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head
+
+<body>
+<form action="" method="get">
+<h2>Age calculator</h2>
+
+<div class="age" id="age"></div>
+
+<div class="block">
+    <p class="title">Date</p>
+    <input type="text"   id="day"   placeholder="Day" required   autofocus>
+</div>
+
+<div class="block">
+    <p class="title">Month</p>
+    <input type="text"   id="month"  required  placeholder="month" >   
+</div>
+
+
+<div class="block">
+    <p class="title">Year</p>
+    <input type="text"   id="year" required  placeholder="year"  >  
+</div>
+<button type="button" onclick="age()">calculate</button>
+
+
+
+
+<script>
+
+function age(){ 
+
+let day = document.getElementById('day').value; 
+
+let month = document.getElementById('month').value; 
+
+let year = document.getElementById('year').value; 
+
+
+
+
+let date = new Date(); 
+
+let get_day = date.getDate(); 
+
+let get_month = 1 + date.getMonth(); 
+
+let get_year = date.getFullYear(); 
+
+
+
+
+let all_month =[31,28,31,30,31,30,31,31,30,31,30,31] 
+
+
+
+
+if (day > get_day) { 
+
+    get_day = get_day+31; 
+
+} 
+
+if (month > get_month) { 
+
+    get_month = get_month +11; 
+
+    get_year = get_year -1; 
+
+} 
+
+ 
+   let d = get_day - day; 
+
+   let m = get_month-month; 
+
+   let y = get_year - year; 
+
+
+   document.getElementById('age').innerHTML = ' Your Age is '  +y+ 
+
+     ' years <br> and  '+m+  '  Months  and ' +d+ ' days '; 
+
+
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+ 
+
+
+
+        
+          
+
+    
